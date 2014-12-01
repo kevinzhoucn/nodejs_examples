@@ -1,0 +1,8 @@
+To connect using the shell:
+mongo ds049858.mongolab.com:49858/appdemo -u <dbuser> -p <dbpassword>
+
+To connect using a driver via the standard URI (what's this?):
+  mongodb://<dbuser>:<dbpassword>@ds049858.mongolab.com:49858/appdemo
+
+mogonlab_demo
+password
