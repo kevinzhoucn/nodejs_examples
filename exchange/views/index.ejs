@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Nockmarket</title>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://spbooks.github.com/nodejs1/docs.css" rel="stylesheet">
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="marketing"><h1>Nockmarket</h1>
+      <p class="marketing-byline">Welcome to the Node.js stockmarket</p>
+      <div class="row offset2">
+        <div class="span4"><img src="" class="bs-icon" alt="">
+          <h2>Real Prices</h2>
+          <p>Here you will be able to sign up for an account and 
+            create a stock portfolio with live prices. This will 
+            combine the beauty of Bootstrap with the performance of 
+            Node.js to create a well designed, blazing fast stock 
+            tracking tool.
+          </p>
+        </div>
+        <div class="span4"><img src="" class="bs-icon" alt="">
+          <h2>Live Data</h2>
+          <p>We will also construct a dummy portfolio to show you how 
+            to stream real-time data straight into your browser. Once 
+            you have mastered the basics you will be able to stream 
+            any type of data from tweets, to chat to auction data.
+          </p>
+        </div>
+      </div>
+    </div>
+    <header class="jumbotron masthead">
+      <div class="inner">
+        <p class="download-info">
+          <a data-toggle="modal" data-target="#myModal" class="btn btn-large">Log In</a>
+          <a data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-large">Sign Up</a>
+        </p>
+      </div>
+    </header>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <form id="signup-form" action="/signup" method="post" class="form-horizontal">
+        <div class="modal-header">
+          <a data-dismiss="modal"  class="close"></a>
+          <h3>Sign Up Today</h3>
+        </div>
+        <div class="modal-body">
+          <fieldset>
+            <div class="control-group">
+              <input type="text" name="username" placeholder="Username" class="input-xlarge uname"/>
+              <span id="imagePlaceHolder"></span>
+            </div>
+            <div class="control-group">
+              <input type="text" name="email" placeholder="Email" class="input-xlarge"/>
+            </div>
+            <div class="control-group">
+              <input type="password" name="password" placeholder="Password" class="input-xlarge"/>
+            </div>
+          </fieldset>
+        </div>
+        <div class="modal-footer"><a href="#" data-dismiss="modal" class="btn">Close</a>
+          <button class="btn btn-primary create-button" type="submit">Create Account</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

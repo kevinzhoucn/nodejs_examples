@@ -1,12 +1,24 @@
 'use strict';
 
-var exchange = require('./exchange')
+var crypto = require('crypto')
+  , db = require('./db')
+  , exchange = require('./exchange')
   , priceFloor = 35
   , priceRange = 10
   , volFloor = 80
   , volRange = 40;
 
+function encryptPassword(plainText) {
+  return crypto.createHash('md5').update(plainText).digest('hex');
+}
+
 module.exports = {
+  createUser: function(username, email, password, callback) {
+    var user = {username: username, email: email
+      , password: encryptPassword(password)};
+    db.insertOne('users', user, callback);
+  },
+  
   generateRandomOrder: function(exchangeData) {
     var order = {};
     if (Math.random() > 0.5) order.type = exchange.BUY

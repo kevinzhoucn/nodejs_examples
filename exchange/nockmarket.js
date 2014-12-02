@@ -3,12 +3,16 @@
 var exchangeData = {}
   , exch = require('./lib/exchange')
   , nocklib = require('./lib/nocklib')
+  , db = require('./lib/db')
+  , nockroutes = require('./routes/nockroutes.js')
   , timeFloor = 500
   , timeRange = 1000
   , express = require('express');
 
 var app = express.createServer();
+
 app.configure(function () {
+  app.use(express.bodyParser());
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
   app.use(express.static(__dirname + '/public'));
@@ -16,9 +20,7 @@ app.configure(function () {
 app.set('view options', {
   layout: false
 });
-app.get('/', function(req, res) {
-  res.render('chart');
-});
+app.get('/', nockroutes.getIndex);
 
 function submitRandomOrder() {
   // order
